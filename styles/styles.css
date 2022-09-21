@@ -1,0 +1,146 @@
+*{
+  margin: 3px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.conteiner {
+  display: grid;
+  grid-template-areas: 
+  "head head head"
+  "section section aside"
+  "section section aside"
+  "footer footer footer";
+  grid-auto-columns: 1fr 1fr 35vh;
+}
+.head {
+  background-color: aqua;
+  grid-area: head;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.head img {
+  height: 120px;
+  width: 120px;
+}
+.section {
+  background-color: blue;
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.information {
+  background-color: crimson;
+  height: auto;
+  min-height: 150px;
+}
+.aside {
+  background-color: blueviolet;
+  grid-area: aside;
+  display: grid;
+  grid-template-areas: 
+  "contact"
+  "skills"
+  "languages";
+  grid-template-columns: 1fr 1fr 10vh;
+}
+.contact, .skills, .languages {
+  /* background-color: hotpink; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  min-width: 245px;
+  width: 100%;
+}
+.contact {
+  background-color: hotpink;
+  grid-area: contact;
+  width: 100%;
+}
+.skills {
+  background-color: lightcoral;
+  grid-area: skills;
+}
+.languages {
+  background-color: lightgrey;
+  grid-area: languages;
+
+width: 100%;
+}
+.contact p,
+.skills p, 
+.languages p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 2px;
+}
+.card-contact {
+  height: 50px;
+  width: 50px;
+}
+.footer {
+  background-color: lightgreen;
+  grid-area: footer;
+  display: flex;
+  flex-grow: row wrap;
+  justify-content: space-between;
+}
+.social {
+  width: 50%;
+  color: white;
+  background-color: black;
+  align-items: center;  
+}
+@media only screen and (max-width: 600px) {
+  .conteiner {
+    display: grid;
+    grid-template-areas: 
+    "head head"
+    "section section"
+    "section section"
+    "aside aside"
+    /* "aside aside" */
+    "footer footer";
+    grid-auto-columns: 1fr 1fr 35vh;
+  }
+  .aside {
+    background-color: blueviolet;
+    grid-area: aside;
+    display: grid;
+    grid-template-areas: 
+    "contact contact"
+    "skills languages";
+    /* "languages"; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-template-columns: auto;
+  }
+  .contact, .skills, .languages {
+    /* background-color: hotpink; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-width: 245px;
+    width: 100%;
+  }
+  .contact p,
+.skills p, 
+.languages p {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin-left: 2px;
+}
+}
